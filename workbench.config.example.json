@@ -1,0 +1,7 @@
+{
+  "paths": {
+    "dataRoot": ".",
+    "strategies": "strategies",
+    "metadata": "metadata"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "quant-research-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "backend": "set PORT=3001&& node app/backend/server.js",
+    "frontend": "vite --host 127.0.0.1 --port 5174",
+    "dev": "start /B npm.cmd run backend && npm.cmd run frontend",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run build && node app/backend/server.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

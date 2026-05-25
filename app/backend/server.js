@@ -450,6 +450,9 @@ await ensureBaseDirs();
 await writeRegistry();
 
 server.listen(port, host, () => {
-  const displayHost = host === "0.0.0.0" ? "localhost" : host;
-  console.log(`Quant Research Workbench running at http://${displayHost}:${port}`);
+  console.log(`Quant Research Workbench listening on http://${host}:${port}`);
+  if (host === "0.0.0.0") {
+    console.log(`Open it from this machine at http://localhost:${port}`);
+    console.log(`Open it on your LAN at http://<server-lan-ip>:${port}`);
+  }
 });

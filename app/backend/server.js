@@ -21,6 +21,7 @@ let registryPath;
 applyPathConfig(workbenchConfig);
 
 const port = Number(process.env.PORT || 3001);
+const host = process.env.HOST || "0.0.0.0";
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -448,6 +449,7 @@ const server = createServer(async (req, res) => {
 await ensureBaseDirs();
 await writeRegistry();
 
-server.listen(port, () => {
-  console.log(`Quant Research Workbench running at http://localhost:${port}`);
+server.listen(port, host, () => {
+  const displayHost = host === "0.0.0.0" ? "localhost" : host;
+  console.log(`Quant Research Workbench running at http://${displayHost}:${port}`);
 });
